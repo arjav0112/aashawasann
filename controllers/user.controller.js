@@ -26,9 +26,9 @@ module.exports.getProfile = async (req, res) => {
         // const userId = req.user._id;
         const {username} = req.body;
         
-        if (!userId) {
+        if (!username) {
             return res.status(400).json({
-                message: "User ID is missing"
+                message: "Username is missing"
             });
         }
         
