@@ -42,6 +42,10 @@ const profileSchema = new mongoose.Schema({
     phonenumber : {
         type : Number,
         required : true
+    },
+    aashwasanId : {
+        type: String,
+        required: true,
     }
 
 });

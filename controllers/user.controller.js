@@ -21,6 +21,37 @@ const generateaashwasanId = () => {
     return `Aash${middlePart}VASH`;
 };
 
+module.exports.getProfile = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        
+        if (!userId) {
+            return res.status(400).json({
+                message: "User ID is missing"
+            });
+        }
+        
+        const profile = await Profile.findOne({ userId });
+        
+        if (!profile) {
+            return res.status(404).json({
+                message: "Profile not found"
+            });
+        }
+        
+        return res.status(200).json({
+            status: 200,
+            message: "Profile fetched successfully",
+            profile
+        });
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    }
+};
+
+
 module.exports.createProfile = async (req, res) => {
     try {
         
@@ -32,10 +63,12 @@ module.exports.createProfile = async (req, res) => {
             bio,
             paymentmethod,
             sociallinklanguage,
-            phonenumber
+            phonenumber,
+            
 
         } = req.body;
 
+    
 
         if(fullname === undefined
             || city === undefined
@@ -51,6 +84,14 @@ module.exports.createProfile = async (req, res) => {
         }
 
         const userId = req.user._id;
+        const aashwasanId = generateaashwasanId();
+
+
+        if(!aashwasanId){
+            return res.status(400).json({
+                message : "aashwasnid not created"
+            })
+        }
 
         const profile = new Profile({
             userId,
@@ -61,8 +102,8 @@ module.exports.createProfile = async (req, res) => {
             bio,
             paymentmethod,
             sociallinklanguage,
-            phonenumber
-
+            phonenumber,
+            aashwasanId,
         });
 
 
@@ -91,6 +132,8 @@ module.exports.createProfile = async (req, res) => {
 
     }
 }
+
+
 
 module.exports.getusernames = async (req,res) => {
     let response = await User.find({});
