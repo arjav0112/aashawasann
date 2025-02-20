@@ -13,6 +13,9 @@ const profileSchema = new mongoose.Schema({
         
 
     },
+    email: {
+        type: String,
+    },
     fullname : {
         type : String,
         required : true

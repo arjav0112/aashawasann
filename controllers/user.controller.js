@@ -58,6 +58,7 @@ module.exports.createProfile = async (req, res) => {
         
         const {
             fullname,
+            email,
             username, 
             city,
             gender,
@@ -73,7 +74,7 @@ module.exports.createProfile = async (req, res) => {
 // console.log(req.user);
     // console.log(req.user);
 
-        if(fullname === undefined || username == undefined
+        if(fullname === undefined || username == undefined || email==undefined
             || city === undefined
             ||  gender === undefined
             || dateofbirth === undefined
@@ -98,6 +99,7 @@ module.exports.createProfile = async (req, res) => {
         const profile = new Profile({
             
             fullname,
+            email,
             username,
             city,
             gender,
