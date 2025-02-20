@@ -152,7 +152,7 @@ const uploadflies = async (fileName,filepath)=>{
     }
 }
 
-router.get('/generate-pdf',async (req, res) => {
+router.post('/generate-pdf',async (req, res) => {
     // const agreementDetails = {
     //     effectiveDate: "2023-10-01",
     //     serviceAgreementDate: "2023-09-01",

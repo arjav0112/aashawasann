@@ -5,8 +5,8 @@ const Authentication = require("../middleware/auth.middleware");
 
 const router = Router();
 
-router.get('/profile', createProfile);
-router.get('/getprofile',getProfile)
+router.post('/profile', createProfile);
+router.post('/getprofile',getProfile)
 router.get("/getusername", getusernames);
 
 module.exports = router;

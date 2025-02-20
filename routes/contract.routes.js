@@ -5,7 +5,7 @@ const Authentication = require("../middleware/auth.middleware");
 const router = Router();
 
 router.post('/create', Authentication , createContract);
-router.get("/recieve/:id",Authentication , recieveContract)
+router.post("/recieve/:id",Authentication , recieveContract)
 router.post("/accept/:id", Authentication , acceptContract); //id : sharing code
 router.post('/ispaid/:id',Authentication , isPaid);
 router.post("/approve/:id",Authentication , approveContract);
