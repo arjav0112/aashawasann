@@ -24,61 +24,71 @@ async function generateAgreement(agreementDetails) {
     const messages = [
         {
             role: "system",
-            content: `You are a professional contract writer. Your task it to generate an agreement based on the given details. Follow this template for generating the template: 
-ESCROW AGREEMENT
-
-This Escrow Agreement (“Agreement”) is made effective as of [EffectiveDate] by and between:
-
-Client: [ClientName], residing at [ClientAddress] (“Client”)
-Freelancer: [FreelancerName], residing at [FreelancerAddress] (“Freelancer”)
-Aashwasan: [EscrowAgentName], located at [EscrowAgentAddress] 
-
-WHEREAS, the Client and Freelancer entered into a Service Agreement dated [ServiceAgreementDate] whereby the Freelancer shall perform certain services (“Services”) for the Client; and
-
-WHEREAS, the parties wish to establish an escrow arrangement to secure the payment for Services rendered by the Freelancer;
-
-NOW, THEREFORE, the parties agree as follows:
-
-1. **Deposit of Funds**
-   - The Client shall deposit an amount of [DepositAmount] [Currency] (“Escrow Funds”) with the Escrow Agent.
-   - The Escrow Funds will be held until the Services are completed in accordance with the Service Agreement or until such time as other conditions specified herein are met.
-
-2. **Release of Funds**
-   - Upon confirmation by the Client that the Services have been satisfactorily completed, the Escrow Agent shall release the Escrow Funds to the Freelancer.
-   - In the event of a dispute, the Escrow Funds shall remain in escrow until the dispute is resolved per Section 5.
-
-3. **Obligations**
-   - **Client:** Must deposit the funds, review the completed work within [ReviewPeriod] days, and notify the Escrow Agent of approval or dispute in writing.
-   - **Freelancer:** Must perform the Services in accordance with the Service Agreement.
-   - **Escrow Agent:** Shall act as a neutral party, hold the Escrow Funds securely, and release funds only in accordance with the terms set forth herein.
-
-4. **Fees and Expenses**
-   - The Escrow Agent shall charge a fee of [EscrowAgentFee]. Any additional expenses will be allocated as follows: [ExpenseAllocation].
-
-5. **Dispute Resolution**
-   - If the Client disputes the completion of Services, notice must be given to the Escrow Agent within [DisputeNotificationPeriod] days.
-   - The parties agree to resolve disputes through good faith negotiations. If unresolved within [MediationPeriod] days, the dispute shall be submitted to binding arbitration in accordance with [ArbitrationRules].
-   - During any dispute resolution process, the Escrow Funds shall remain with the Escrow Agent.
-
-6. **Term and Termination**
-   - This Agreement shall remain in effect until the Escrow Funds are either fully released or returned to the Client.
-   - Either party may terminate this Agreement by providing [NoticePeriod] days’ written notice, subject to any outstanding obligations under the Service Agreement.
-
-7. **Governing Law**
-   - This Agreement shall be governed by and construed in accordance with the laws of [Jurisdiction].
-
-8. **Miscellaneous**
-   - This Agreement constitutes the entire understanding among the parties with respect to the subject matter herein.
-   - Any amendments must be made in writing and signed by all parties.
-   - If any provision of this Agreement is held to be invalid, the remaining provisions shall remain in full force and effect.
-
+            content: `You are a professional Indian Legal agreement writer. Your task it to generate an agreement based on the given details. Follow this template for generating the template: 
+AASHWASAN SERVICE AGREEMENT
+This Agreement ("Agreement") is made and entered into as of [Effective Date] by and between:
+Service Provider: [Service Provider Name], residing at [Service Provider Address] ("Service Provider")
+ Client: [Client Name], residing at [Client Address] ("Client")
+ Aashwasan: Aashwasan Technologies Private Limited, located at [Aashwasan Address] ("Aashwasan" or "Mediator")
+WHEREAS, the Client desires to engage the Service Provider for specific services under the terms defined herein; and
+ WHEREAS, Aashwasan acts as a trusted mediator to ensure compliance with agreed terms and protect the interests of both parties.
+Now, therefore, in consideration of the mutual promises contained herein, the parties agree as follows:
+1. Scope of Services
+The Service Provider agrees to provide the following services to the Client:
+Service Description: [Detailed description of services]
+Timeline: Work shall be completed by [End Date].
+2. Contract Terms to be Fulfilled
+The agreement is considered fulfilled only when:
+ ✔ [Mention specific criteria for project completion]
+ ✔ [Mention additional terms, if any]
+3. Obligations of Parties
+Client Obligations:
+Provide necessary information, resources, and approvals for the Service Provider to complete the project.
+Review and approve deliverables within [Review Period] days.
+Service Provider Obligations:
+Complete the services as per the agreed timeline and quality standards.
+Maintain confidentiality and professionalism in all interactions.
+Aashwasan’s Role:
+Ensure compliance with contract terms.
+Mediate disputes if necessary.
+Act as an escrow agent, holding and releasing funds as per the agreement.
+4. Fees and Expenses
+Escrow Service Fee: Aashwasan shall charge a fee of [EscrowAgentFee], which will be deducted from the final payout.
+Additional expenses shall be allocated as follows: [Expense Allocation].
+5. Deposit of Funds
+The Client shall deposit [Project Price] [Currency] ("Escrow Funds") with Aashwasan.
+These funds will remain in escrow until the services are completed per the agreed terms.
+6. Release of Funds
+Upon confirmation by the Client that the service is satisfactorily completed, Aashwasan shall release the Escrow Funds to the Service Provider.
+If the Client fails to respond within [Review Period] days after project completion, the funds will be automatically released unless a dispute is raised.
+In the event of a dispute, the funds shall remain in escrow until resolved per Section 7 (Dispute Resolution).
+7. Dispute Resolution
+In case of a dispute, both parties agree to first attempt resolution through mutual discussion.
+If unresolved within [Mediation Period] days, the matter shall be referred to Aashwasan for mediation.
+If mediation fails, the dispute shall be resolved through binding arbitration under the Arbitration and Conciliation Act, 1996.
+8. Confidentiality & Intellectual Property
+All project materials and information shared shall remain confidential.
+Upon full payment, intellectual property rights of the deliverables shall be transferred to the Client unless otherwise agreed in writing.
+9. Termination of Agreement
+Either party may terminate the agreement with a [Notice Period] days’ notice.
+In case of termination, the Service Provider shall be compensated pro-rata for work completed up to that date.
+If the Service Provider has not met contractual obligations, Aashwasan may withhold payment until the issue is resolved.
+10. Force Majeure
+Neither party shall be held liable for failure or delay in performing obligations due to circumstances beyond their control, including but not limited to natural disasters, government actions, wars, strikes, pandemics, or technological failures.
+If such conditions persist for more than [Force Majeure Period] days, either party may terminate the agreement with mutual consent.
+11. Governing Law
+This Agreement shall be governed by and construed in accordance with the laws of India.
+12. Entire Agreement & Amendments
+This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements or understandings, whether written or oral.
+Any amendments must be made in writing and signed by all parties.
+If any provision of this Agreement is found to be invalid, the remaining provisions shall remain enforceable.
 IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first above written.
-
-__________________________        __________________________        __________________________  
-[ClientName]                      [FreelancerName]               [EscrowAgentName]  
-Signature                         Signature                      Signature
-
-Date: ___________________         Date: ___________________         Date: ___________________
+Client Signature: ________________________
+ Client Name: ________________________
+ Date: ________________________
+Service Provider Signature: ________________________
+ Service Provider Name: ________________________
+ Date: ________________________
             `
         },
         {
