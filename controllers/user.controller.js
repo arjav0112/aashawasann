@@ -61,7 +61,7 @@ module.exports.createProfile = async (req, res) => {
             email,
             username, 
             city,
-            gender,
+
             dateofbirth,
             bio,
             paymentmethod,
@@ -76,7 +76,7 @@ module.exports.createProfile = async (req, res) => {
 
         if(fullname === undefined || username == undefined || email==undefined
             || city === undefined
-            ||  gender === undefined
+            
             || dateofbirth === undefined
             || bio === undefined
             || paymentmethod === undefined
@@ -102,7 +102,7 @@ module.exports.createProfile = async (req, res) => {
             email,
             username,
             city,
-            gender,
+            
             dateofbirth,
             bio,
             paymentmethod,
