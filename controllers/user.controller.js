@@ -63,7 +63,7 @@ module.exports.createProfile = async (req, res) => {
             city,
 
             
-            bio,
+            
             paymentmethod,
             sociallinklanguage,
             phonenumber,
@@ -76,7 +76,7 @@ module.exports.createProfile = async (req, res) => {
 
         if(fullname === undefined || username == undefined 
             || city === undefined
-            || bio === undefined
+        
             || paymentmethod === undefined
             || sociallinklanguage === undefined
             || phonenumber === undefined){
@@ -102,7 +102,7 @@ module.exports.createProfile = async (req, res) => {
             city,
             
             
-            bio,
+            
             paymentmethod,
             sociallinklanguage,
             phonenumber,

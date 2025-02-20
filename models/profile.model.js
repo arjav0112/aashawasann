@@ -23,10 +23,6 @@ const profileSchema = new mongoose.Schema({
         required : true
 
     },
-    bio : {
-        type : String,
-        required : true
-    },
     paymentmethod : {
         type : String,
         required : true
