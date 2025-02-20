@@ -23,10 +23,6 @@ const profileSchema = new mongoose.Schema({
         required : true
 
     },
-    dateofbirth:{
-        type : Date,
-        required : true
-    },
     bio : {
         type : String,
         required : true
