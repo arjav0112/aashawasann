@@ -153,33 +153,33 @@ const uploadflies = async (fileName,filepath)=>{
 }
 
 router.get('/generate-pdf',async (req, res) => {
-    const agreementDetails = {
-        effectiveDate: "2023-10-01",
-        serviceAgreementDate: "2023-09-01",
-        client: {
-            name: "Arjav",
-            address: "Sector-3,Delhi"
-        },
-        freelancer: {
-            name: "Sachin Sharma",
-            address: "Sector-24,Mumbai"
-        },
-        escrowAgent: {
-            name: "Aashwasan",
-            address: "Delhi"
-        },
-        depositAmount: 10000,
-        currency: "INR",
-        reviewPeriod: 14,
-        disputeNotificationPeriod: 7,
-        mediationPeriod: 30,
-        noticePeriod: 15,
-        escrowAgentFee: "2%",
-        expenseAllocation: "Client",
-        jurisdiction: "INDIA",
-        arbitrationRules: "AAA Rules"
-    };
-    // const agreementDetails = req.body;
+    // const agreementDetails = {
+    //     effectiveDate: "2023-10-01",
+    //     serviceAgreementDate: "2023-09-01",
+    //     client: {
+    //         name: "Arjav",
+    //         address: "Sector-3,Delhi"
+    //     },
+    //     freelancer: {
+    //         name: "Sachin Sharma",
+    //         address: "Sector-24,Mumbai"
+    //     },
+    //     escrowAgent: {
+    //         name: "Aashwasan",
+    //         address: "Delhi"
+    //     },
+    //     depositAmount: 10000,
+    //     currency: "INR",
+    //     reviewPeriod: 14,
+    //     disputeNotificationPeriod: 7,
+    //     mediationPeriod: 30,
+    //     noticePeriod: 15,
+    //     escrowAgentFee: "2%",
+    //     expenseAllocation: "Client",
+    //     jurisdiction: "INDIA",
+    //     arbitrationRules: "AAA Rules"
+    // };
+    const agreementDetails = req.body;
     const agreement = await generateAgreement(agreementDetails);
 
     if(!agreement){
