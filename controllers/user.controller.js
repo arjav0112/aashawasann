@@ -23,7 +23,8 @@ const generateaashwasanId = () => {
 
 module.exports.getProfile = async (req, res) => {
     try {
-        const userId = req.user._id;
+        // const userId = req.user._id;
+        const {username} = req.body;
         
         if (!userId) {
             return res.status(400).json({
@@ -31,7 +32,7 @@ module.exports.getProfile = async (req, res) => {
             });
         }
         
-        const profile = await Profile.findOne({ userId });
+        const profile = await Profile.findOne({ username : username });
         
         if (!profile) {
             return res.status(404).json({
@@ -56,7 +57,8 @@ module.exports.createProfile = async (req, res) => {
     try {
         
         const {
-            fullname, 
+            fullname,
+            username, 
             city,
             gender,
             dateofbirth,
@@ -69,9 +71,9 @@ module.exports.createProfile = async (req, res) => {
         } = req.body;
 // console.log(req.body)
 // console.log(req.user);
-    
+    // console.log(req.user);
 
-        if(fullname === undefined
+        if(fullname === undefined || username == undefined
             || city === undefined
             ||  gender === undefined
             || dateofbirth === undefined
@@ -96,6 +98,7 @@ module.exports.createProfile = async (req, res) => {
         const profile = new Profile({
             
             fullname,
+            username,
             city,
             gender,
             dateofbirth,
@@ -120,7 +123,8 @@ module.exports.createProfile = async (req, res) => {
 
         return res.status(200).json({
             status: 200,
-            message : "Profile Created Successfully"
+            message : "Profile Created Successfully",
+            profileData,
         })
 
 
