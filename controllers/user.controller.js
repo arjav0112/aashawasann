@@ -67,7 +67,8 @@ module.exports.createProfile = async (req, res) => {
             
 
         } = req.body;
-
+// console.log(req.body)
+// console.log(req.user);
     
 
         if(fullname === undefined
@@ -82,19 +83,18 @@ module.exports.createProfile = async (req, res) => {
                 message : "Please fill all the fields"
             });
         }
-
-        const userId = req.user._id;
         const aashwasanId = generateaashwasanId();
-
-
+        
+        
         if(!aashwasanId){
-            return res.status(400).json({
-                message : "aashwasnid not created"
-            })
-        }
-
+                return res.status(400).json({
+                        message : "aashwasnid not created"
+                    })
+                }
+                
+                // const userId = req.user._id;
         const profile = new Profile({
-            userId,
+            
             fullname,
             city,
             gender,
@@ -109,6 +109,7 @@ module.exports.createProfile = async (req, res) => {
 
         const profileData = await profile.save();
 
+        console.log(profileData.userId)
 
         if(!profileData){
             return res.status(400).json({
