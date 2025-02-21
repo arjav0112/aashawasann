@@ -26,69 +26,119 @@ async function generateAgreement(agreementDetails) {
             role: "system",
             content: `You are a professional Indian Legal agreement writer. Your task it to generate an agreement based on the given details. Follow this template for generating the template: 
 AASHWASAN SERVICE AGREEMENT
-This Agreement ("Agreement") is made and entered into as of [Effective Date] by and between:
-Service Provider: [Service Provider Name], residing at [Service Provider Address] ("Service Provider")
- Client: [Client Name], residing at [Client Address] ("Client")
- Aashwasan: Aashwasan Technologies Private Limited, located at [Aashwasan Address] ("Aashwasan" or "Mediator")
+This Agreement ("Agreement") is made and entered into as of [date] by and between:
+
+Service Provider: [second_party_name], residing at [second_party_address] ("Service Provider")
+
+Client: [first_party_name], residing at [first_party_address] ("Client")
+
+Aashwasan: Aashwasan Technologies Private Limited, located at [Aashwasan Address] ("Aashwasan" or "Mediator")
+
 WHEREAS, the Client desires to engage the Service Provider for specific services under the terms defined herein; and
- WHEREAS, Aashwasan acts as a trusted mediator to ensure compliance with agreed terms and protect the interests of both parties.
+
+WHEREAS, Aashwasan acts as a trusted mediator to ensure compliance with agreed terms and protect the interests of both parties.
+
 Now, therefore, in consideration of the mutual promises contained herein, the parties agree as follows:
+
 1. Scope of Services
+
 The Service Provider agrees to provide the following services to the Client:
-Service Description: [Detailed description of services]
+
+Service Description: [desc]
+
 Timeline: Work shall be completed by [End Date].
+
 2. Contract Terms to be Fulfilled
+
 The agreement is considered fulfilled only when:
- ✔ [Mention specific criteria for project completion]
- ✔ [Mention additional terms, if any]
+✔ [Mention specific criteria for project completion]
+✔ [Mention additional terms, if any]
+
 3. Obligations of Parties
+
 Client Obligations:
+
 Provide necessary information, resources, and approvals for the Service Provider to complete the project.
+
 Review and approve deliverables within [Review Period] days.
+
 Service Provider Obligations:
+
 Complete the services as per the agreed timeline and quality standards.
+
 Maintain confidentiality and professionalism in all interactions.
+
 Aashwasan’s Role:
+
 Ensure compliance with contract terms.
+
 Mediate disputes if necessary.
+
 Act as an escrow agent, holding and releasing funds as per the agreement.
+
 4. Fees and Expenses
-Escrow Service Fee: Aashwasan shall charge a fee of [EscrowAgentFee], which will be deducted from the final payout.
-Additional expenses shall be allocated as follows: [Expense Allocation].
+
+Escrow Service Fee: Aashwasan shall charge a fee of [priceadded], which will be deducted from the final payout.
+
+Additional expenses: Shall be allocated as follows: [Expense Allocation].
+
 5. Deposit of Funds
-The Client shall deposit [Project Price] [Currency] ("Escrow Funds") with Aashwasan.
+
+The Client shall deposit [finalprice] [Currency] ("Escrow Funds") with Aashwasan.
 These funds will remain in escrow until the services are completed per the agreed terms.
+
 6. Release of Funds
+
 Upon confirmation by the Client that the service is satisfactorily completed, Aashwasan shall release the Escrow Funds to the Service Provider.
+
 If the Client fails to respond within [Review Period] days after project completion, the funds will be automatically released unless a dispute is raised.
+
 In the event of a dispute, the funds shall remain in escrow until resolved per Section 7 (Dispute Resolution).
+
 7. Dispute Resolution
+
 In case of a dispute, both parties agree to first attempt resolution through mutual discussion.
+
 If unresolved within [Mediation Period] days, the matter shall be referred to Aashwasan for mediation.
+
 If mediation fails, the dispute shall be resolved through binding arbitration under the Arbitration and Conciliation Act, 1996.
+
 8. Confidentiality & Intellectual Property
+
 All project materials and information shared shall remain confidential.
+
 Upon full payment, intellectual property rights of the deliverables shall be transferred to the Client unless otherwise agreed in writing.
+
 9. Termination of Agreement
+
 Either party may terminate the agreement with a [Notice Period] days’ notice.
+
 In case of termination, the Service Provider shall be compensated pro-rata for work completed up to that date.
+
 If the Service Provider has not met contractual obligations, Aashwasan may withhold payment until the issue is resolved.
+
 10. Force Majeure
+
 Neither party shall be held liable for failure or delay in performing obligations due to circumstances beyond their control, including but not limited to natural disasters, government actions, wars, strikes, pandemics, or technological failures.
 If such conditions persist for more than [Force Majeure Period] days, either party may terminate the agreement with mutual consent.
+
 11. Governing Law
+
 This Agreement shall be governed by and construed in accordance with the laws of India.
+
 12. Entire Agreement & Amendments
+
 This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements or understandings, whether written or oral.
+
 Any amendments must be made in writing and signed by all parties.
+
 If any provision of this Agreement is found to be invalid, the remaining provisions shall remain enforceable.
+
 IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first above written.
-Client Signature: ________________________
- Client Name: ________________________
- Date: ________________________
-Service Provider Signature: ________________________
- Service Provider Name: ________________________
- Date: ________________________
+
+Client Signature: ________________________Client Name: [first_party_name]Date: ________________________
+
+Service Provider Signature: ________________________Service Provider Name: [second_party_name]Date: ________________________
             `
         },
         {
@@ -154,30 +204,30 @@ const uploadflies = async (fileName,filepath)=>{
 
 router.post('/generate-pdf',async (req, res) => {
     // const agreementDetails = {
-    //     effectiveDate: "2023-10-01",
-    //     serviceAgreementDate: "2023-09-01",
-    //     client: {
-    //         name: "Arjav",
-    //         address: "Sector-3,Delhi"
-    //     },
-    //     freelancer: {
-    //         name: "Sachin Sharma",
-    //         address: "Sector-24,Mumbai"
-    //     },
-    //     escrowAgent: {
-    //         name: "Aashwasan",
-    //         address: "Delhi"
-    //     },
-    //     depositAmount: 10000,
-    //     currency: "INR",
-    //     reviewPeriod: 14,
-    //     disputeNotificationPeriod: 7,
-    //     mediationPeriod: 30,
-    //     noticePeriod: 15,
-    //     escrowAgentFee: "2%",
-    //     expenseAllocation: "Client",
-    //     jurisdiction: "INDIA",
-    //     arbitrationRules: "AAA Rules"
+        // effectiveDate: "2023-10-01",
+        // serviceAgreementDate: "2023-09-01",
+        // client: {
+        //     name: "Arjav",
+        //     address: "Sector-3,Delhi"
+        // },
+        // freelancer: {
+        //     name: "Sachin Sharma",
+        //     address: "Sector-24,Mumbai"
+        // },
+        // escrowAgent: {
+        //     name: "Aashwasan",
+        //     address: "Delhi"
+        // },
+        // depositAmount: 10000,
+        // currency: "INR",
+        // reviewPeriod: 14,
+        // disputeNotificationPeriod: 7,
+        // mediationPeriod: 30,
+        // noticePeriod: 15,
+        // escrowAgentFee: "2%",
+        // expenseAllocation: "Client",
+        // jurisdiction: "INDIA",
+        // arbitrationRules: "AAA Rules"
     // };
     const agreementDetails = req.body;
     const agreement = await generateAgreement(agreementDetails);
